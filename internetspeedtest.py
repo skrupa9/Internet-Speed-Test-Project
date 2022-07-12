@@ -35,4 +35,5 @@ class InternetSpeedTest:
         self.result_id = measure_id.text
 
     def save_results(self):
-        pass
+        self.driver.get(paths.FORM_LINK)
+
