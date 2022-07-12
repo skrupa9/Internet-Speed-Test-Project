@@ -1,4 +1,5 @@
 import time
+from datetime import date
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -13,8 +14,10 @@ class InternetSpeedTest:
         self.download_speed = "-"
         self.upload_speed = "-"
         self.result_id = "-"
+        self.today = date.today()
 
     def get_internet_speed(self):
+        time.sleep(3)
         privacy_accept_btn = self.driver.find_element(By.ID, "onetrust-accept-btn-handler")
         privacy_accept_btn.click()
         start_btn = self.driver.find_element(By.CLASS_NAME, "start-text")
